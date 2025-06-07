@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Blog Writer ✍️🤖
 
 An AI-powered blog writing web app that lets you:
@@ -39,3 +40,7 @@ An AI-powered blog writing web app that lets you:
 ```bash
 git clone https://github.com/your-username/ai-blog-writer.git
 cd ai-blog-writer
+=======
+# ai-blog-writer
+A responsive AI-powered blog writing tool with export and sharing features.
+>>>>>>> 07e707b8f99ebd65d0069983c000516a86128b8a

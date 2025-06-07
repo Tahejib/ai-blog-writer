@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Blog Writer</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="notification.png">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <h1>AI Blog Writer</h1>
+      <button id="toggleTheme" aria-label="Toggle Dark/Light Theme">🌙</button>
+    </div>
+
+    <p class="subtitle">Enter a topic to generate a blog post:</p>
+
+    <!-- Blog style selector -->
+    <select id="styleSelect" aria-label="Select blog style" style="margin-bottom: 10px;">
+      <option value="formal">Formal</option>
+      <option value="casual">Casual</option>
+      <option value="technical">Technical</option>
+    </select>
+
+    <!-- Email input and send button -->
+    <div style="margin-bottom: 1rem;">
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Enter email to send blog"
+        aria-label="Email input"
+        style="padding: 10px; width: 70%; border: 1px solid #1976d2; border-radius: 8px;"
+      />
+      <button
+        id="sendEmailBtn"
+        style="padding: 10px 15px; margin-left: 5px; background-color: #1976d2; color: white; border: none; border-radius: 8px; cursor: pointer;"
+      >
+        Send Email
+      </button>
+    </div>
+
+    <!-- Topic input -->
+    <input
+      type="text"
+      id="topicInput"
+      placeholder="Enter blog topic here..."
+      aria-label="Blog topic input"
+      style="margin-bottom: 10px;"
+    />
+    <button id="generateBtn" onclick="generateBlog()">Generate Blog</button>
+
+    <div id="loading" class="loader" style="display:none;" aria-live="polite"></div>
+
+    <div id="result" aria-live="polite" style="white-space: pre-wrap; margin-top: 15px;"></div>
+    <div id="stats" class="stats"></div>
+
+    <div id="actions" style="display:none; margin-top: 10px;">
+      <button onclick="copyBlog()">Copy Blog</button>
+      <button onclick="downloadBlog()">Download Blog</button>
+    </div>
+
+    <!-- History section -->
+    <div class="history" style="margin-top: 20px;">
+      <h2>History</h2>
+      <input
+        type="text"
+        id="searchHistory"
+        placeholder="Search history..."
+        aria-label="Search blog history"
+        style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ccc;"
+      />
+      <div id="history"></div>
+      <button
+        onclick="clearHistory()"
+        aria-label="Clear all blog history"
+        style="margin-top:10px; background:#e53935; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer;"
+      >
+        Clear All History
+      </button>
+    </div>
+  </div>
+
+  <div id="overlay" style="display:none;"></div>
+
+  <!-- Toast notification container -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
